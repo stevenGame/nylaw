@@ -1,0 +1,55 @@
+<nb-card style="width: 100%; height: 100%;">
+    <nb-card-body>
+
+        <form (ngSubmit)="searchSumbit()">
+            <input nbInput placeholder="Type to search" [(ngModel)]="title" name="title" class="search"
+                style="margin-left: 3rem;">
+            <button type="submit" nbButton style="margin-left: 5rem;"> Search </button>
+            <input nbInput value="Pro Search" style="margin-left: 5rem;" class="search">
+        </form>
+        <nb-list>
+            <!-- header -->
+            <nb-list-item class="report-item" style="font-weight: bold;">
+                <span class="name-title item">
+                    Reports
+                </span>
+                <span class="item source-author">
+                    Source/Author
+                </span>
+                <span class="published item">
+                    Published
+                </span>
+            </nb-list-item>
+
+            <nb-list-item *ngFor="let report of reports" class="report-item report-data-item">
+                <span class="name-title item">
+                    <a [href]="report.url" target="_blank" class="name">{{report.name}}</a>
+                    <br>
+                    <span class="title">
+                        {{report.title}}
+                    </span>
+                </span>
+
+
+                <span class="item source-author">
+                    {{report.source}}
+                    <br>
+                    <span class="author">
+                        {{report.author}}
+                    </span>
+                </span>
+                <span class="published item">
+                    {{report.published | date:'mediumDate' :'EDT'}} {{report.published | date:'shortTime' :'EDT'}}
+                </span>
+            </nb-list-item>
+        </nb-list>
+        <div class="reports-footer">
+            <span>{{pager}}</span>
+            <span>
+                <button nbButton style="margin-right: 1rem;" (click)="prevPage()">《Prev</button>
+                <button nbButton (click)="nextPage()">next》</button>
+            </span>
+        </div>
+        
+    </nb-card-body>
+</nb-card>

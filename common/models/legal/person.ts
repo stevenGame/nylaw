@@ -1,0 +1,41 @@
+export interface Person {
+    FamilyName: string,
+    GivenName: string,
+    MiddleName: string,
+    USCISOnlineAccount: string,
+    SSN: string,
+    ANumber: string,
+    CityOrTown: string,
+    PlaceofBirth: string,
+    CountryOfBirth: string,
+    DateOfBirth: string,
+    Sex: number,
+    Country: string,
+    IDStatus: number,
+    ResideCity: string,
+    ResideCountry: string,
+    Relationship: string,
+    Ethnicity: number,
+    Race: number,
+    HeightFeet: string,
+    HeightInches: string,
+    Weight1: string,
+    Weight2: string,
+    Weight3: string,
+    EyeColor: number,
+    HairColor: number,
+    MaritalStatus: number,
+    MarriedTimes: string,
+    IssuedSSN: boolean,
+    
+    Legal_FamilyName: string,
+    Legal_GivenName: string,
+    Legal_MiddleName: string,
+    PassportNum: string,
+    State: string, // should in address?
+    SponseIsUSArmy: number;
+
+    ChildrenLivingNum: string;
+    ChildWithYou: number,
+    JoinedArmry: number,
+}

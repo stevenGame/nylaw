@@ -1,0 +1,19 @@
+<nb-card-body>
+  <nb-list>
+    <nb-list-item class="item">
+      <span>Name</span>
+      <span>Lastest</span>
+      <span>% change</span>
+      <span>time</span>
+    </nb-list-item>
+    <nb-list-item class="item" *ngFor="let item of frontCardData; trackBy: trackByDate">
+      <span>{{ item.date }}</span>
+      <span>{{ item.value }}</span>
+      <span class="delta" [class.up]="item.delta.up" [class.down]="!item.delta.up">
+        <nb-icon [icon]="item.delta.up ? 'arrow-up' : 'arrow-down'" pack="eva"></nb-icon>
+        {{ item.delta.value }}%
+      </span>
+      <span>time</span>
+    </nb-list-item>
+  </nb-list>
+</nb-card-body>

@@ -1,0 +1,4 @@
+<span class="header-row">Watchlist</span>
+<nb-select [selected]="type" (selectedChange)="changePeriod($event)" class="header-row-item-2">
+    <nb-option *ngFor="let period of types" [value]="period">{{ period }}</nb-option>
+</nb-select>

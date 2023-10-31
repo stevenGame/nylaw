@@ -1,0 +1,29 @@
+<nb-card-header>
+  <nb-select [selected]="selectedCurrency" (selectedChange)="changeCurrency($event)">
+    <nb-option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</nb-option>
+  </nb-select>
+</nb-card-header>
+<nb-card-body>
+  <div class="chart-info">
+    <!-- <div>Daily Income</div> -->
+    <div class="h6"> {{ symbol.symbol }} {{ symbol.open }} </div>
+    <div class="delta" [class.up]="dayPercent> 0" [class.down]="dayPercent < 0">
+      <nb-icon [icon]="dayPercent> 0? 'arrow-up' : 'arrow-down'" pack="eva" class="direction">
+      </nb-icon>
+      <span [class.up]="dayPercent> 0" [class.down]="dayPercent < 0" class="direction">
+        {{ symbol.dayPercent | percent:'1.2' }}
+      </span>
+    </div>
+    <nb-list>
+       <!--TODO: change to pipe avoid performace issue  -->
+      <nb-list-item>
+        <span>buy {{selectedCurrency/price | number:'1.0-0'}} market estimate: {{estimate | currency}}  </span> 
+      </nb-list-item>
+      <nb-list-item>
+        <span>sell {{selectedCurrency/price | number:'1.0-0'}} limit {{price*1.2 | number:'1.0-2'}} estimate: {{estimateLimit | currency}} </span>
+      </nb-list-item>
+    </nb-list>
+    
+  </div>
+ 
+</nb-card-body>

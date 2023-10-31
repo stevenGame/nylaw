@@ -1,0 +1,29 @@
+<nb-card size="medium">
+    <nb-card-body>
+        <div style="padding-bottom: 2rem;">
+            <nb-select placeholder="Select case type">
+                <nb-option value=""> </nb-option>
+                <nb-option value="MarriageCase">MarriageCase</nb-option>
+                <nb-option value="WorkCase">WorkCase</nb-option>
+            </nb-select>
+            <button nbButton style="margin-left: 2rem;">Add new case</button>
+        </div>
+
+        <nb-list>
+            <nb-list-item *ngFor="let mcase of cases">
+                <p style="min-width: 30%;">{{mcase.name}}: {{mcase.type}}</p>
+                <p style="min-width: 30%;">
+                    <button nbButton (click)="generatePdf(mcase)" [nbSpinner]="mcase.loading" [disabled]="loading"
+                        nbSpinnerStatus="primary">Generate
+                        PDF</button>
+                </p>
+
+                <a href="https://drive.google.com/drive/folders/{{mcase.folderId}}" *ngIf="mcase.loaded" target="_blank"
+                    style="margin-left: 2rem;">
+                    Generate PDF succeed! click me check google drive</a>
+            </nb-list-item>
+        </nb-list>
+
+    </nb-card-body>
+
+</nb-card>

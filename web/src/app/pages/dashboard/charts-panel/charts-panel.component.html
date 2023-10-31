@@ -1,0 +1,23 @@
+<nb-card size="giant">
+  <nb-tabset fullWidth (changeTab)="changeTab($event)">
+    <nb-tab tabTitle="Stock">
+      <div class="chart-container">
+
+        <ngx-orders-chart #ordersChart [ordersChartData]="ordersChartData" [strategy]="'rsi'" [symbol]="'MSFT'">
+        </ngx-orders-chart>
+
+      </div>
+    </nb-tab>
+    <nb-tab tabTitle="Strategy" [lazyLoad]="true">
+      <div class="chart-container">
+        <!-- <ngx-chart-panel-summary [summary]="chartPanelSummary"></ngx-chart-panel-summary>
+        <ngx-chart-panel-header [type]="period"
+                                (periodChange)="setPeriodAndGetChartData($event)">
+        </ngx-chart-panel-header> -->
+        <!-- <ngx-profit-chart #profitChart [profitChartData]="profitChartData"></ngx-profit-chart> -->
+        <!-- TODO: change backtest results to echarts -->
+        <iframe src="/quant/rsi.html" height="100%" width="100%"></iframe>
+      </div>
+    </nb-tab>
+  </nb-tabset>
+</nb-card>

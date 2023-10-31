@@ -1,0 +1,12 @@
+<nb-list>
+    <nb-list-item class="item" [class.item-selected]="item.symbol==selectedSymbol"
+        *ngFor="let item of watchListData; trackBy:watchListTrack" (click)="clickSymbol(item)">
+        <span>{{ item.symbol }}</span>
+        <span>{{ item.close |currency:'USD'}}</span>
+        <span class="delta" [class.up]="(item.dayPercent||0) >= 0" [class.down]="(item.dayPercent||0) < 0">
+            <nb-icon [icon]="(item.dayPercent||0) >= 0? 'arrow-up' : 'arrow-down'" pack="eva"></nb-icon>
+            {{ item.dayPercent |percent:'1.2'}}
+        </span>
+        <span>{{item.time | date:'h:mm:ss a' :'EDT'}}</span>
+    </nb-list-item>
+</nb-list>

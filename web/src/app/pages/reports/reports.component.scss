@@ -1,0 +1,43 @@
+.search {
+    margin: 1rem;
+}
+.report-data-item {
+    align-items:start;
+}
+
+.report-item {
+
+    .name-title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 60%;
+    }
+    // .name {}
+    .title {
+        font-size: 0.7rem;
+        text-wrap: balance;
+    }
+    .item {
+        margin-left: 2rem;
+    }
+
+    .source-author {
+        width: 20%;
+    }
+
+    .author {
+        font-size: 0.7rem;
+    }
+
+    .date {
+        width: 20%;
+    }
+}
+
+.reports-footer {
+    width: 100%;
+    display: flex;
+    padding: 1rem ;
+    justify-content: space-between;
+}

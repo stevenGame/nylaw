@@ -1,0 +1,14 @@
+<nb-card  size="large" style="height: 100%;">
+    <nb-card-body>
+        <p>If chat service not response for a long time, please contract Steven or support him 30$ make this service stable</p>
+        <p>如果聊天服务长时间未响应,请联系小吴或者支持他200块让这个服务可以更稳定</p>
+        <nb-chat title="Chat" size="large">
+            <nb-chat-message *ngFor="let msg of messages" [type]="msg.type" [message]="msg.text" [reply]="msg.reply"
+                [sender]="msg.user.name" [date]="msg.date" [files]="msg.files" [quote]="msg.quote"
+                [latitude]="msg.latitude" [longitude]="msg.longitude" [avatar]="msg.user.avatar">
+            </nb-chat-message>
+            <nb-chat-form (send)="sendMessage($event)" [dropFiles]="true">
+            </nb-chat-form>
+        </nb-chat>
+    </nb-card-body>
+</nb-card>

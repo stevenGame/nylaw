@@ -1,0 +1,29 @@
+<div echarts [options]="option" [merge]="option" class="echart" (chartInit)="onChartInit($event)" style="height: 45%;">
+</div>
+<div class="backtest-command">
+   
+    <div>
+        Strategy:
+        <nb-select [(selected)]="strategy">
+            <nb-option value="rsi">RSI</nb-option>
+            <nb-option value="kally">Kally</nb-option>
+        </nb-select>
+    </div>
+    <div>
+        <button nbButton (click)="runStrategy()" [disabled]="quantTaskRunning()">Run strategy</button>
+    </div>
+
+</div>
+
+<div class="card-container">
+    <nb-card *ngFor="let summery of backTest;let i = index" class="summery-card">
+        <div>{{summery.title}}</div>
+        <span class="card-value" [class.card-value-up]="summery.value.endsWith('%')">{{summery.value}}</span>
+    </nb-card>
+</div>
+
+<nb-card class="backtest-log">
+    <nb-card-body style="width: 100%;">
+        <p [innerText]="quantTask.message || ''"></p>
+    </nb-card-body>
+</nb-card>

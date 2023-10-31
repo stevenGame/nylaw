@@ -1,0 +1,20 @@
+{
+  "/api": {
+    "target": "http://localhost:3000",
+    "secure": false
+  },
+  "/quant": {
+    "target": "http://localhost:3000",
+    "pathRewrite": {
+      "^/quant": ""
+    },
+    "secure": false
+  },
+  "/chatapi": {
+    "target": "http://localhost:3000",
+    "pathRewrite": {
+      "^/chatapi": ""
+    },
+    "secure": false
+  }
+}

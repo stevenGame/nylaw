@@ -1,0 +1,88 @@
+<nb-layout windowMode>
+    <nb-layout-column>
+        <!-- <div class="row">
+            <div class="col-md-12">
+                <nb-card class="inline-form-card">
+                    <nb-card-body>
+                        <form class="form-inline">
+                            <input type="text" nbInput fullWidth placeholder="Jane Doe">
+                            <input type="text" nbInput fullWidth placeholder="Email">
+
+                        </form>
+                    </nb-card-body>
+                </nb-card>
+            </div>
+        </div> -->
+
+        <nb-card>
+            <nb-card-header>婚姻绿卡信息采集表 I-130 & I-485 </nb-card-header>
+            <nb-card-body>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="label">Family Name (Last Name) 姓</label>
+                            <input type="text" nbInput fullWidth [(ngModel)]="case.i130.applicant.FamilyName">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="label">Middle Name</label>
+                            <input type="text" nbInput fullWidth [(ngModel)]="case.i130.applicant.MiddleName">
+
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="label">Given Name (First Name) 名</label>
+                            <input type="text" nbInput fullWidth [(ngModel)]="case.i130.applicant.GivenName">
+
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="label">City/Town/Village of Birth (出生地)</label>
+                            <input type="text" nbInput fullWidth [(ngModel)]="case.i130.applicant.PlaceofBirth">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="label">Country of Birth 出生国</label>
+                            <input type="text" nbInput fullWidth [(ngModel)]="case.i130.applicant.CountryOfBirth">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="label">Date of Birth 出生日</label>
+                            <input type="text" nbInput fullWidth [(ngModel)]="case.i130.applicant.DateOfBirth" placeholder="mm/dd/yyyy">
+
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="label">Sex 性别</label>
+                            <nb-select fullWidth [(selected)]="case.i130.applicant.Sex">
+                                <nb-option value="">None</nb-option>
+                                <nb-option value="0">Male 男</nb-option>
+                                <nb-option value="1">Female 女</nb-option>
+                            </nb-select>
+                        </div>
+                    </div>
+                    <!-- only for test select -->
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="label"> State 州</label>
+                            <nb-select fullWidth [(selected)]="case.i130.applicant.State">
+                                <nb-option value="">None</nb-option>
+                                <nb-option value="WA">WA</nb-option>
+                                <nb-option value="NY">NY</nb-option>
+                            </nb-select>
+                        </div>
+                    </div>
+                </div>
+
+            </nb-card-body>
+        </nb-card>
+        <button nbButton (click)="submit()" status="primary" style="margin-top: 2rem;">Submit</button>
+    </nb-layout-column>
+
+</nb-layout>

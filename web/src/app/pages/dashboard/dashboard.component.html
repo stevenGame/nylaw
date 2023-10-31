@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-xxl-4">
+    <!-- <ngx-traffic-reveal-card></ngx-traffic-reveal-card> -->
+    <ait-watchlist-card #wathlistCard [watchList]="watchList" [selectedSymbol]="selectedSymbol"
+    (symbolChangeEvent)="symbolChange($event)">
+
+    </ait-watchlist-card>
+    <div class="row">
+      <div class="col-md-12">
+        <!-- <ngx-earning-card></ngx-earning-card> -->
+        <ait-command-card #commandCard></ait-command-card>
+      </div>
+    </div>
+  </div>
+  <div class="col-xxl-8">
+    <!-- TODO: change to clear ait-strangey-card  -->
+    <ngx-ecommerce-charts #strangeyCard></ngx-ecommerce-charts>
+  </div>
+</div>

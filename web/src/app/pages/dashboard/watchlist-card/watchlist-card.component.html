@@ -1,0 +1,24 @@
+<nb-reveal-card [showToggleButton]="false" [revealed]="revealed">
+  <nb-card-front>
+    <nb-card size="small" title="WatchList" style="display: flex;flex-direction: column;">
+      <nb-card-header>
+        <ait-watchlist-cards-header [type]="period" (periodChange)="setPeriodAngGetData($event)">
+        </ait-watchlist-cards-header>
+        <nb-icon class="toggle-icon" icon="chevron-up-outline" pack="eva" (click)="toggleView()"></nb-icon>
+      </nb-card-header>
+      <nb-card-body>
+        <ait-watchlist-front-card #watchlistFront [watchList]="watchList" [selectedSymbol]="selectedSymbol"
+          (symbolChanged)="symbolChanged($event)">
+        </ait-watchlist-front-card>
+      </nb-card-body>
+
+    </nb-card>
+  </nb-card-front>
+  <nb-card-back>
+    <nb-card size="small">
+      <!-- <ngx-traffic-cards-header [type]="period" (periodChange)="setPeriodAngGetData($event)"></ngx-traffic-cards-header>
+        <ngx-traffic-back-card [trafficBarData]="trafficBarData"></ngx-traffic-back-card> -->
+      <nb-icon class="toggle-icon" icon="chevron-down-outline" pack="eva" (click)="toggleView()"></nb-icon>
+    </nb-card>
+  </nb-card-back>
+</nb-reveal-card>
