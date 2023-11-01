@@ -427,9 +427,34 @@
     <nb-card>
       <nb-card-header>Parents </nb-card-header>
       <nb-card-body>
+        <div class="smalltitle">Parent 1's Information</div>
         <div class="row">
-          <label class="label">Parent 1's Information
-          </label>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Legal Family Name
+              </label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.parents[0].Legal_FamilyName">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Legal Given Name
+              </label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.parents[0].Legal_GivenName">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Legal Middle Name
+              </label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.parents[0].Legal_MiddleName">
+            </div>
+          </div>
+
+
           <div class="col-sm-4">
             <div class="form-group">
               <label class="label">Family Name (Last Name)
@@ -501,9 +526,33 @@
 
         </div>
         <div></div>
+        <div class="smalltitle">Parent 2's Information</div>
         <div class="row">
-          <label class="label">Parent 2's Information
-          </label>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Legal Family Name
+              </label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i485.parents[0].Legal_FamilyName">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Legal Given Name
+              </label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i485.parents[0].Legal_GivenName">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Legal Middle Name
+              </label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i485.parents[0].Legal_MiddleName">
+            </div>
+          </div>
+
           <div class="col-sm-4">
             <div class="form-group">
               <label class="label">Family Name (Last Name)
@@ -551,9 +600,17 @@
 
           <div class="col-sm-4">
             <div class="form-group">
+              <label class="label">Country Or Town of Birth
+              </label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i485.parents[0].CityOrTown">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
               <label class="label">Country of Birth
               </label>
-              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.parents[0].CountryOfBirth">
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i485.parents[0].CountryOfBirth">
             </div>
           </div>
 
@@ -575,13 +632,12 @@
 
         </div>
       </nb-card-body>
-
-
     </nb-card>
 
-    <!--spouse -->
+
+    <!--spouse1(完成) -->
     <nb-card>
-      <nb-card-header>spouse1 </nb-card-header>
+      <nb-card-header>spouse</nb-card-header>
       <nb-card-body>
         <div class="row">
           <div class="col-sm-4">
@@ -604,12 +660,283 @@
 
             </div>
           </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">City/Town/Village of Birth (出生地)</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1.PlaceofBirth">
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Country of Birth 出生国</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1.CountryOfBirth">
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Date of Birth 出生日期</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1.DateOfBirth"
+                     placeholder="mm/dd/yyyy">
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Sex 性别</label>
+              <nb-select fullWidth [(selected)]="case.i130.spouse1.Sex">
+                <nb-option value="">None</nb-option>
+                <nb-option value="0">Male 男</nb-option>
+                <nb-option value="1">Female 女</nb-option>
+              </nb-select>
+            </div>
+          </div>
+          <!-- only for test select -->
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> State 州</label>
+              <nb-select fullWidth [(selected)]="case.i130.spouse1.State">
+                <nb-option value="">None</nb-option>
+                <nb-option value="WA">WA</nb-option>
+                <nb-option value="NY">NY</nb-option>
+              </nb-select>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> City/Town/Village of Birth 城市或镇</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1.CityOrTown">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Amumber </label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1.ANumber">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Country Of Birth 出生国家</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1.Country">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Place Of Birth 出生地</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1.PlaceofBirth">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Country 国家</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1.Country">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> IDStatus ID洲</label>
+              <nb-select fullWidth [(selected)]="case.i130.spouse1.IDStatus">
+                <nb-option value="">None</nb-option>
+                <nb-option value="WA">WA</nb-option>
+                <nb-option value="NY">NY</nb-option>
+              </nb-select>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Reside City 居住城市</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1.ResideCity">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Reside Country 居住国家</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1.ResideCountry">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Ethni city 族群</label>
+              <nb-select fullWidth [(selected)]="case.i130.spouse1.Ethnicity">
+                <nb-option value="">None</nb-option>
+                <nb-option value="WA">Hispanic or Latino</nb-option>
+                <nb-option value="NY">Not Hispanic or Latino</nb-option>
+              </nb-select>
+            </div>
+          </div>
+
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Race 种族</label>
+              <nb-select fullWidth [(selected)]="case.i130.spouse1.Race">
+                <nb-option value="">None</nb-option>
+                <nb-option value="WA">White</nb-option>
+                <nb-option value="NY">Asian</nb-option>
+                <nb-option value="WA">Black or African American</nb-option>
+                <nb-option value="NY">American Indian or Alaska Native</nb-option>
+                <nb-option value="WA">Native Hawaiian or Other Pacific Islander</nb-option>
+              </nb-select>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Height Feet 高度（英尺）</label>
+              <input class="feet-input" type="text" nbInput [(ngModel)]="case.i130.spouse1.HeightFeet">
+              <input class="feet-input" type="text" nbInput [(ngModel)]="case.i130.spouse1.HeightInches">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Weight 重量</label>
+              <input class="weight-input" type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1.Weight1">
+              <input class="weight-input" type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1.Weight2">
+              <input class="weight-input" type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1.Weight3">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Eye Color 眼睛颜色</label>
+              <nb-select fullWidth [(selected)]="case.i130.spouse1.EyeColor">
+                <nb-option value="">None</nb-option>
+                <nb-option value="Black ">Black 黑色</nb-option>
+                <nb-option value="Blue">Blue 蓝色</nb-option>
+                <nb-option value="Brown">Brown</nb-option>
+                <nb-option value="Gray">Gray</nb-option>
+                <nb-option value="Green">Green</nb-option>
+                <nb-option value="Hazel">Hazel</nb-option>
+                <nb-option value="Maroon">Maroon</nb-option>
+                <nb-option value="Pink">Pink</nb-option>
+                <nb-option value="Unknown/Other">Unknown/Other</nb-option>
+              </nb-select>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Hair Color 头发颜色</label>
+              <nb-select fullWidth [(selected)]="case.i130.spouse1.HairColor">
+                <nb-option value="">None</nb-option>
+                <nb-option value="Bald">Bald (No hair)</nb-option>
+                <nb-option value="Black">Black</nb-option>
+                <nb-option value="Blond">Blond</nb-option>
+                <nb-option value="Brown">Brown</nb-option>
+                <nb-option value="Gray">Gray</nb-option>
+                <nb-option value="Red">Red</nb-option>
+                <nb-option value="Sandy">Sandy</nb-option>
+                <nb-option value="White">White</nb-option>
+                <nb-option value="Unknown/Other">Unknown/Other</nb-option>
+              </nb-select>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Marital Status 婚姻状况</label>
+              <nb-select fullWidth [(selected)]="case.i130.spouse1.MaritalStatus">
+                <nb-option value=""></nb-option>
+                <nb-option value="0">Single, Never Married</nb-option>
+                <nb-option value="1">Married</nb-option>
+                <nb-option value="2">Divorced</nb-option>
+                <nb-option value="3">Widowed</nb-option>
+                <nb-option value="4">Separated</nb-option>
+                <nb-option value="5">Annulled</nb-option>
+              </nb-select>
+            </div>
+          </div>
 
           <div class="col-sm-4">
             <div class="form-group">
               <label class="label"> Date of Current Marriage (if currently married) 结婚时间</label>
               <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1.MarriedTimes"
-                placeholder="mm/dd/yyyy">
+                     placeholder="mm/dd/yyyy">
+            </div>
+          </div>
+
+          <!--                  没有找见-->
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Issued SSN 发行SSN</label>
+              <nb-select fullWidth [(selected)]="case.i130.spouse1.IssuedSSN">
+                <nb-option value="">None</nb-option>
+                <nb-option value="WA">WA</nb-option>
+                <nb-option value="NY">NY</nb-option>
+              </nb-select>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Legal FamilyName 法律姓氏</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1.Legal_FamilyName">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Legal GivenName 法律名</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1.Legal_GivenName">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Legal MiddleName</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1.Legal_MiddleName">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Passport Num 护照编号</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1.PassportNum">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> If you are married, is your spouse a current member of the
+                U.S. armed forces or U.S. Coast Guard?</label>
+              <nb-select fullWidth [(selected)]="case.i130.spouse1.SponseIsUSArmy">
+                <nb-option value="">None</nb-option>
+                <nb-option value="0">Yes</nb-option>
+                <nb-option value="1">No</nb-option>
+              </nb-select>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Children Living Num 子女个数</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1.ChildrenLivingNum">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Child With You</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1.ChildWithYou">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Joined Armry 参军</label>
+              <nb-select fullWidth [(selected)]="case.i130.spouse1.JoinedArmry">
+                <nb-option value="">None</nb-option>
+                <nb-option value="0">Yes</nb-option>
+                <nb-option value="1">No</nb-option>
+              </nb-select>
             </div>
           </div>
 
@@ -947,7 +1274,122 @@
       </nb-card-body>
     </nb-card>
 
-    <!--addresses -->
+    <!--Beneficiary Family-->
+    <nb-card>
+      <nb-card-header>Beneficiary Family </nb-card-header>
+      <nb-card-body>
+        <div class="smalltitle">person-1</div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Family Name (Last Name) 姓</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.beneficiaryFamilies[0].FamilyName">
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Middle Name</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.beneficiaryFamilies[0].MiddleName">
+
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Given Name (First Name) 名</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.beneficiaryFamilies[0].GivenName">
+
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Country of Birth 出生国</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.beneficiaryFamilies[0].CountryOfBirth">
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Date of Birth 出生日期</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.beneficiaryFamilies[0].DateOfBirth"
+                     placeholder="mm/dd/yyyy">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Relationship</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.beneficiaryFamilies[0].Relationship">
+            </div>
+          </div>
+
+
+        </div>
+
+        <div class="smalltitle">person-2</div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Family Name (Last Name) 姓</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.beneficiaryFamilies[1].FamilyName">
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Middle Name</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.beneficiaryFamilies[1].MiddleName">
+
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Given Name (First Name) 名</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.beneficiaryFamilies[1].GivenName">
+
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Country of Birth 出生国</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.beneficiaryFamilies[1].CountryOfBirth">
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Date of Birth 出生日期</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.beneficiaryFamilies[1].DateOfBirth"
+                     placeholder="mm/dd/yyyy">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Relationship</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.beneficiaryFamilies[1].Relationship">
+            </div>
+          </div>
+
+
+        </div>
+      </nb-card-body>
+    </nb-card>
+
+    <!--Beneficiary MaritalInfo -->
+    <nb-card>
+      <nb-card-header>beneficiaryMaritalInfo </nb-card-header>
+      <nb-card-body>
+
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">How many times has the beneficiary been married?</label>
+            </div>
+          </div>
+        </div>
+      </nb-card-body>
+    </nb-card>
+
+    <!--addresses（完成） -->
     <nb-card>
       <nb-card-header>addresses </nb-card-header>
       <nb-card-body>
@@ -1056,11 +1498,12 @@
       </nb-card-body>
     </nb-card>
 
-    <!--workHistory -->
+    <!--applicant workHistory（完成） -->
     <nb-card>
-      <nb-card-header>workHistory </nb-card-header>
+      <nb-card-header>Appicant WorkHistory </nb-card-header>
       <nb-card-body>
 
+        <div class="smalltitle">Appicant WorkHistory-1</div>
         <div class="row">
           <div class="col-sm-4">
             <div class="form-group">
@@ -1069,13 +1512,12 @@
             </div>
           </div>
 
-          <!--            没有-->
-          <!--            <div class="col-sm-4">-->
-          <!--              <div class="form-group">-->
-          <!--                <label class="label">Name of Employer/Company</label>-->
-          <!--                <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[0].OrgName">-->
-          <!--              </div>-->
-          <!--            </div>-->
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label class="label">Name of Organization</label>
+                          <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[0].OrgName">
+                        </div>
+                      </div>
 
           <div class="col-sm-4">
             <div class="form-group">
@@ -1084,18 +1526,19 @@
             </div>
           </div>
 
-          <!--            没有-->
-          <!--            <div class="col-sm-4">-->
-          <!--              <div class="form-group">-->
-          <!--                <label class="label"> Unit-Type / Uint</label>-->
-          <!--                <nb-select class="addrUnit" [(selected)]="case.i130.workHistory[0].UnitType">-->
-          <!--                  <nb-option value="0">Apt.</nb-option>-->
-          <!--                  <nb-option value="1">Ste.</nb-option>-->
-          <!--                  <nb-option value="2">Flr.</nb-option>-->
-          <!--                </nb-select>-->
-          <!--                <input type="text" class="addrUnit" nbInput  [(ngModel)]="case.i130.workHistory[0].Unit">-->
-          <!--              </div>-->
-          <!--            </div>-->
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label class="label"> Unit-Type / Uint</label>
+                          <nb-select class="addrUnit" [(selected)]="case.i130.workHistory[0].UnitType">
+                            <nb-option value="0">Apt.</nb-option>
+                            <nb-option value="1">Ste.</nb-option>
+                            <nb-option value="2">Flr.</nb-option>
+                          </nb-select>
+                          <input type="text" class="addrUnit" nbInput  [(ngModel)]="case.i130.workHistory[0].Unit">
+                        </div>
+                      </div>
+
+
 
           <div class="col-sm-4">
             <div class="form-group">
@@ -1161,8 +1604,228 @@
 
           <div class="col-sm-4">
             <div class="form-group">
-              <label class="label">Same As Physical Address</label>
+              <label class="label">Nature of Group</label>
               <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[0].Group">
+            </div>
+          </div>
+
+
+
+
+        </div>
+
+
+        <div class="smalltitle">Appicant WorkHistory-2</div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Name of Employer/Company</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[1].EmployerName">
+            </div>
+          </div>
+
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label class="label">Name of Organization</label>
+                          <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[1].OrgName">
+                        </div>
+                      </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Street Number and Name</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[1].StreetNumberName">
+            </div>
+          </div>
+
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label class="label"> Unit-Type / Uint</label>
+                          <nb-select class="addrUnit" [(selected)]="case.i130.workHistory[1].UnitType">
+                            <nb-option value="0">Apt.</nb-option>
+                            <nb-option value="1">Ste.</nb-option>
+                            <nb-option value="2">Flr.</nb-option>
+                          </nb-select>
+                          <input type="text" class="addrUnit" nbInput  [(ngModel)]="case.i130.workHistory[1].Unit">
+                        </div>
+                      </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">City or Town</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[1].CityOrTown">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> State 州</label>
+              <nb-select fullWidth [(selected)]="case.i130.workHistory[1].State">
+                <nb-option value="">None</nb-option>
+                <nb-option value="WA">WA</nb-option>
+                <nb-option value="NY">NY</nb-option>
+              </nb-select>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">ZIP Code</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[1].ZipCode">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Province</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[1].Province">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Postal Code</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[1].PostalCode">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Country </label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[1].Country">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Date From</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[1].FromDate"
+                     placeholder="mm/dd/yyyy">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Date To</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[1].ToDate"
+                     placeholder="mm/dd/yyyy">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Nature of Group</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[1].Group">
+            </div>
+          </div>
+
+
+
+
+        </div>
+
+
+        <div class="smalltitle">Appicant WorkHistory-3</div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Name of Employer/Company</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[2].EmployerName">
+            </div>
+          </div>
+
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label class="label">Name of Organization</label>
+                          <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[2].OrgName">
+                        </div>
+                      </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Street Number and Name</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[2].StreetNumberName">
+            </div>
+          </div>
+
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label class="label"> Unit-Type / Uint</label>
+                          <nb-select class="addrUnit" [(selected)]="case.i130.workHistory[2].UnitType">
+                            <nb-option value="0">Apt.</nb-option>
+                            <nb-option value="1">Ste.</nb-option>
+                            <nb-option value="2">Flr.</nb-option>
+                          </nb-select>
+                          <input type="text" class="addrUnit" nbInput  [(ngModel)]="case.i130.workHistory[2].Unit">
+                        </div>
+                      </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">City or Town</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[2].CityOrTown">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> State 州</label>
+              <nb-select fullWidth [(selected)]="case.i130.workHistory[2].State">
+                <nb-option value="">None</nb-option>
+                <nb-option value="WA">WA</nb-option>
+                <nb-option value="NY">NY</nb-option>
+              </nb-select>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">ZIP Code</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[2].ZipCode">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Province</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[2].Province">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Postal Code</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[2].PostalCode">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Country </label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[2].Country">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Date From</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[2].FromDate"
+                     placeholder="mm/dd/yyyy">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Date To</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[2].ToDate"
+                     placeholder="mm/dd/yyyy">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Nature of Group</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[2].Group">
             </div>
           </div>
 
@@ -1175,11 +1838,345 @@
       </nb-card-body>
     </nb-card>
 
-    <!--maritalInfo -->
+    <!--spouse workHistory（完成） -->
+    <nb-card>
+      <nb-card-header>Spouse WorkHistory </nb-card-header>
+      <nb-card-body>
+
+        <div class="smalltitle">Spouse WorkHistory-1</div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Name of Employer/Company</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[3].EmployerName">
+            </div>
+          </div>
+
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label class="label">Name of Organization</label>
+                          <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[3].OrgName">
+                        </div>
+                      </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Street Number and Name</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[3].StreetNumberName">
+            </div>
+          </div>
+
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label class="label"> Unit-Type / Uint</label>
+                          <nb-select class="addrUnit" [(selected)]="case.i130.workHistory[3].UnitType">
+                            <nb-option value="0">Apt.</nb-option>
+                            <nb-option value="1">Ste.</nb-option>
+                            <nb-option value="2">Flr.</nb-option>
+                          </nb-select>
+                          <input type="text" class="addrUnit" nbInput  [(ngModel)]="case.i130.workHistory[3].Unit">
+                        </div>
+                      </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">City or Town</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[3].CityOrTown">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> State 州</label>
+              <nb-select fullWidth [(selected)]="case.i130.workHistory[3].State">
+                <nb-option value="">None</nb-option>
+                <nb-option value="WA">WA</nb-option>
+                <nb-option value="NY">NY</nb-option>
+              </nb-select>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">ZIP Code</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[3].ZipCode">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Province</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[3].Province">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Postal Code</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[3].PostalCode">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Country </label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[3].Country">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Date From</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[3].FromDate"
+                     placeholder="mm/dd/yyyy">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Date To</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[3].ToDate"
+                     placeholder="mm/dd/yyyy">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Nature of Group</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[3].Group">
+            </div>
+          </div>
+
+
+
+
+        </div>
+
+        <div class="smalltitle">Spouse WorkHistory-2</div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Name of Employer/Company</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[4].EmployerName">
+            </div>
+          </div>
+
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label class="label">Name of Organization</label>
+                          <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[4].OrgName">
+                        </div>
+                      </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Street Number and Name</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[4].StreetNumberName">
+            </div>
+          </div>
+
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label class="label"> Unit-Type / Uint</label>
+                          <nb-select class="addrUnit" [(selected)]="case.i130.workHistory[4].UnitType">
+                            <nb-option value="0">Apt.</nb-option>
+                            <nb-option value="1">Ste.</nb-option>
+                            <nb-option value="2">Flr.</nb-option>
+                          </nb-select>
+                          <input type="text" class="addrUnit" nbInput  [(ngModel)]="case.i130.workHistory[4].Unit">
+                        </div>
+                      </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">City or Town</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[4].CityOrTown">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> State 州</label>
+              <nb-select fullWidth [(selected)]="case.i130.workHistory[4].State">
+                <nb-option value="">None</nb-option>
+                <nb-option value="WA">WA</nb-option>
+                <nb-option value="NY">NY</nb-option>
+              </nb-select>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">ZIP Code</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[4].ZipCode">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Province</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[4].Province">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Postal Code</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[4].PostalCode">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Country </label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[4].Country">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Date From</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[4].FromDate"
+                     placeholder="mm/dd/yyyy">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Date To</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[4].ToDate"
+                     placeholder="mm/dd/yyyy">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Nature of Group</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[4].Group">
+            </div>
+          </div>
+
+
+
+
+        </div>
+
+        <div class="smalltitle">Spouse WorkHistory-3</div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Name of Employer/Company</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[5].EmployerName">
+            </div>
+          </div>
+
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label class="label">Name of Organization</label>
+                          <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[5].OrgName">
+                        </div>
+                      </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Street Number and Name</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[5].StreetNumberName">
+            </div>
+          </div>
+
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label class="label"> Unit-Type / Uint</label>
+                          <nb-select class="addrUnit" [(selected)]="case.i130.workHistory[5].UnitType">
+                            <nb-option value="0">Apt.</nb-option>
+                            <nb-option value="1">Ste.</nb-option>
+                            <nb-option value="2">Flr.</nb-option>
+                          </nb-select>
+                          <input type="text" class="addrUnit" nbInput  [(ngModel)]="case.i130.workHistory[5].Unit">
+                        </div>
+                      </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">City or Town</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[5].CityOrTown">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> State 州</label>
+              <nb-select fullWidth [(selected)]="case.i130.workHistory[5].State">
+                <nb-option value="">None</nb-option>
+                <nb-option value="WA">WA</nb-option>
+                <nb-option value="NY">NY</nb-option>
+              </nb-select>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">ZIP Code</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[5].ZipCode">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Province</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[5].Province">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Postal Code</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[5].PostalCode">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Country </label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[5].Country">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Date From</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[5].FromDate"
+                     placeholder="mm/dd/yyyy">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Date To</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[5].ToDate"
+                     placeholder="mm/dd/yyyy">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Nature of Group</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.workHistory[5].Group">
+            </div>
+          </div>
+
+
+
+
+        </div>
+
+      </nb-card-body>
+    </nb-card>
+
+    <!--maritalInfo（完成）-->
     <nb-card>
       <nb-card-header>maritalInfo </nb-card-header>
       <nb-card-body>
-
         <div class="row">
           <div class="col-sm-4">
             <div class="form-group">
@@ -1220,13 +2217,12 @@
             </div>
           </div>
 
-          <!--            没有-->
-          <!--            <div class="col-sm-4">-->
-          <!--              <div class="form-group">-->
-          <!--                <label class="label">Start Date</label>-->
-          <!--                <input type="text" nbInput fullWidth [(ngModel)]="case.i130.maritalInfo.StartDate" placeholder="mm/dd/yyyy">-->
-          <!--              </div>-->
-          <!--            </div>-->
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Start Date</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.maritalInfo.StartDate" placeholder="mm/dd/yyyy">
+            </div>
+          </div>
 
           <div class="col-sm-4">
             <div class="form-group">
@@ -1237,42 +2233,40 @@
           </div>
 
         </div>
-
-
       </nb-card-body>
     </nb-card>
 
-    <!--beneficiaryMaritalInfo -->
+    <!--maritalHistory-->
     <nb-card>
-      <nb-card-header>beneficiaryMaritalInfo </nb-card-header>
+      <nb-card-header>Marital History</nb-card-header>
       <nb-card-body>
-
+        <div class="smalltitle">child-1</div>
         <div class="row">
           <div class="col-sm-4">
             <div class="form-group">
               <label class="label">Date of Current Marriage</label>
-              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.beneficiaryMaritalInfo.Date">
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.maritalInfo.Date">
             </div>
           </div>
 
           <div class="col-sm-4">
             <div class="form-group">
               <label class="label">City Or Town</label>
-              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.beneficiaryMaritalInfo.CityOrTown">
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.maritalInfo.CityOrTown">
             </div>
           </div>
 
           <div class="col-sm-4">
             <div class="form-group">
               <label class="label">Street Number and Name</label>
-              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.beneficiaryMaritalInfo.Country">
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.maritalInfo.Country">
             </div>
           </div>
 
           <div class="col-sm-4">
             <div class="form-group">
-              <label class="label"> State </label>
-              <nb-select fullWidth [(selected)]="case.i130.beneficiaryMaritalInfo.State">
+              <label class="label"> State 州</label>
+              <nb-select fullWidth [(selected)]="case.i130.maritalInfo.State">
                 <nb-option value="">None</nb-option>
                 <nb-option value="WA">WA</nb-option>
                 <nb-option value="NY">NY</nb-option>
@@ -1283,25 +2277,324 @@
           <div class="col-sm-4">
             <div class="form-group">
               <label class="label">Province</label>
-              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.beneficiaryMaritalInfo.Province">
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.maritalInfo.Province">
             </div>
           </div>
 
           <div class="col-sm-4">
             <div class="form-group">
-              <label class="label">Date Marriage Started</label>
-              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.beneficiaryMaritalInfo.StartDate"
-                placeholder="mm/dd/yyyy">
+              <label class="label">Start Date</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.maritalInfo.StartDate" placeholder="mm/dd/yyyy">
             </div>
           </div>
 
           <div class="col-sm-4">
             <div class="form-group">
               <label class="label">Date Marriage Ended</label>
-              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.beneficiaryMaritalInfo.EndedDate"
-                placeholder="mm/dd/yyyy">
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.maritalInfo.EndedDate"
+                     placeholder="mm/dd/yyyy">
             </div>
           </div>
+
+        </div>
+
+        <div class="smalltitle">child-1</div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Date of Current Marriage</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.maritalInfo.Date">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">City Or Town</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.maritalInfo.CityOrTown">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Street Number and Name</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.maritalInfo.Country">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> State 州</label>
+              <nb-select fullWidth [(selected)]="case.i130.maritalInfo.State">
+                <nb-option value="">None</nb-option>
+                <nb-option value="WA">WA</nb-option>
+                <nb-option value="NY">NY</nb-option>
+              </nb-select>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Province</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.maritalInfo.Province">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Start Date</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.maritalInfo.StartDate" placeholder="mm/dd/yyyy">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Date Marriage Ended</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.maritalInfo.EndedDate"
+                     placeholder="mm/dd/yyyy">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="smalltitle">child-1</div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Date of Current Marriage</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.maritalInfo.Date">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">City Or Town</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.maritalInfo.CityOrTown">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Street Number and Name</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.maritalInfo.Country">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> State 州</label>
+              <nb-select fullWidth [(selected)]="case.i130.maritalInfo.State">
+                <nb-option value="">None</nb-option>
+                <nb-option value="WA">WA</nb-option>
+                <nb-option value="NY">NY</nb-option>
+              </nb-select>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Province</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.maritalInfo.Province">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Start Date</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.maritalInfo.StartDate" placeholder="mm/dd/yyyy">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Date Marriage Ended</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.maritalInfo.EndedDate"
+                     placeholder="mm/dd/yyyy">
+            </div>
+          </div>
+
+        </div>
+      </nb-card-body>
+    </nb-card>
+
+    <!--child（完成）-->
+    <nb-card>
+      <nb-card-header>child </nb-card-header>
+      <nb-card-body>
+        <div class="smalltitle">child-1</div>
+        <div class="row">
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Legal FamilyName 法律姓氏</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i485.children[0].Legal_FamilyName">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Legal GivenName 法律名</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i485.children[0].Legal_GivenName">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Legal MiddleName</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i485.children[0].Legal_MiddleName">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Country of Birth 出生国</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i485.children[0].CountryOfBirth">
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Date of Birth 出生日期</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i485.children[0].DateOfBirth"
+                     placeholder="mm/dd/yyyy">
+
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Amumber </label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i485.children[0].ANumber">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Is this child applying with you?</label>
+              <nb-select fullWidth [(selected)]="case.i485.children[0].ChildWithYou">
+                <nb-option value="-1">None</nb-option>
+                <nb-option value="0">Yes</nb-option>
+                <nb-option value="1">No</nb-option>
+              </nb-select>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="smalltitle">child-2</div>
+        <div class="row">
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Legal FamilyName 法律姓氏</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i485.children[1].Legal_FamilyName">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Legal GivenName 法律名</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i485.children[1].Legal_GivenName">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Legal MiddleName</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i485.children[1].Legal_MiddleName">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Country of Birth 出生国</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i485.children[1].CountryOfBirth">
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Date of Birth 出生日期</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i485.children[1].DateOfBirth"
+                     placeholder="mm/dd/yyyy">
+
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Amumber </label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i485.children[1].ANumber">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Is this child applying with you?</label>
+              <nb-select fullWidth [(selected)]="case.i485.children[1].ChildWithYou">
+                <nb-option value="-1">None</nb-option>
+                <nb-option value="0">Yes</nb-option>
+                <nb-option value="1">No</nb-option>
+              </nb-select>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="smalltitle">child-3</div>
+        <div class="row">
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Legal FamilyName 法律姓氏</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i485.children[2].Legal_FamilyName">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Legal GivenName 法律名</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i485.children[2].Legal_GivenName">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Legal MiddleName</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i485.children[2].Legal_MiddleName">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Country of Birth 出生国</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i485.children[2].CountryOfBirth">
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Date of Birth 出生日期</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i485.children[2].DateOfBirth"
+                     placeholder="mm/dd/yyyy">
+
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Amumber </label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i485.children[2].ANumber">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label"> Is this child applying with you?</label>
+              <nb-select fullWidth [(selected)]="case.i485.children[2].ChildWithYou">
+                <nb-option value="-1">None</nb-option>
+                <nb-option value="0">Yes</nb-option>
+                <nb-option value="1">No</nb-option>
+              </nb-select>
+            </div>
+          </div>
+
         </div>
 
       </nb-card-body>
@@ -1338,144 +2631,59 @@
       </nb-card-body>
     </nb-card>
 
+
+
     <!--spouse1EntryInfo -->
     <nb-card>
       <nb-card-header>spouse1EntryInfo </nb-card-header>
       <nb-card-body>
         <div class="row">
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="label">Family Name (Last Name) 姓</label>
-              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1EntryInfo.ArrivalStauts">
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="label">Middle Name</label>
-              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1EntryInfo.EverBeenUS">
 
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="label">Given Name (First Name) 名</label>
-              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1EntryInfo.StayExpiraDate">
 
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="label">City/Town/Village of Birth (出生地)</label>
-              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1EntryInfo.LastImmigrationStatus">
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="label">Country of Birth 出生国</label>
-              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1EntryInfo.I94Number">
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="label">Date of Birth 出生日期</label>
-              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1EntryInfo.ArrivalDate"
-                placeholder="mm/dd/yyyy">
+<!--          <div class="col-sm-4">-->
+<!--            <div class="form-group">-->
+<!--              <label class="label">Family Name (Last Name) 姓</label>-->
+<!--              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1EntryInfo.ArrivalStauts">-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          -->
+<!--          -->
+<!--          <div class="col-sm-4">-->
+<!--            <div class="form-group">-->
+<!--              <label class="label">Middle Name</label>-->
+<!--              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1EntryInfo.EverBeenUS">-->
+<!--            </div>-->
+<!--          </div>-->
 
-            </div>
-          </div>
+
           <div class="col-sm-4">
             <div class="form-group">
-              <label class="label">Sex 性别</label>
-              <nb-select fullWidth [(selected)]="case.i130.spouse1EntryInfo.TravelDocNumber">
-                <nb-option value="">None</nb-option>
-                <nb-option value="0">Male 男</nb-option>
-                <nb-option value="1">Female 女</nb-option>
-              </nb-select>
-            </div>
-          </div>
-          <!-- only for test select -->
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="label"> State 州</label>
-              <nb-select fullWidth [(selected)]="case.i130.spouse1EntryInfo.PassportOrTravelDocIssueCountry">
-                <nb-option value="">None</nb-option>
-                <nb-option value="WA">WA</nb-option>
-                <nb-option value="NY">NY</nb-option>
-              </nb-select>
+              <label class="label">Date of Arrival (mm/dd/yyyy)</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1EntryInfo.ArrivalDate">
+
             </div>
           </div>
 
           <div class="col-sm-4">
             <div class="form-group">
-              <label class="label"> City/Town/Village of Birth 城市或镇</label>
+              <label class="label">Travel Document Number</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1EntryInfo.TravelDocNumber">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Country of Issuance for Passport or Travel Document</label>
+              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1EntryInfo.PassportOrTravelDocIssueCountry">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="label">Country of Issuance for Passport or Travel Document</label>
               <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1EntryInfo.PassportExpiraDate">
             </div>
           </div>
-
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="label"> Amumber </label>
-              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1EntryInfo.ClassOfAdmission">
-            </div>
-          </div>
-
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="label"> Country Of Birth 出生国家</label>
-              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1EntryInfo.ImmigrationProceedings">
-            </div>
-          </div>
-
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="label"> Place Of Birth 出生地</label>
-              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1EntryInfo.LastArriveOther">
-            </div>
-          </div>
-
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="label"> Country 国家</label>
-              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1EntryInfo.LastArriveAdmitted">
-            </div>
-          </div>
-
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="label"> IDStatus ID洲</label>
-              <nb-select fullWidth [(selected)]="case.i130.spouse1EntryInfo.LastArriveStatus">
-                <nb-option value="">None</nb-option>
-                <nb-option value="WA">WA</nb-option>
-                <nb-option value="NY">NY</nb-option>
-              </nb-select>
-            </div>
-          </div>
-
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="label"> Reside City 居住城市</label>
-              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1EntryInfo.CityTown">
-            </div>
-          </div>
-
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="label"> Reside Country 居住国家</label>
-              <input type="text" nbInput fullWidth [(ngModel)]="case.i130.spouse1EntryInfo.State">
-            </div>
-          </div>
-
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="label"> Ethni city 族群</label>
-              <nb-select fullWidth [(selected)]="case.i130.spouse1EntryInfo.ParoleEntrance">
-                <nb-option value="">None</nb-option>
-                <nb-option value="WA">Hispanic or Latino</nb-option>
-                <nb-option value="NY">Not Hispanic or Latino</nb-option>
-              </nb-select>
-            </div>
-          </div>
-
         </div>
 
       </nb-card-body>
@@ -1485,6 +2693,7 @@
 
     <button nbButton (click)="submit()" status="primary" style="margin-top: 2rem;" [nbSpinner]="loading"
       [disabled]="loading">Submit</button>
+
   </nb-layout-column>
 
 </nb-layout>
