@@ -8,6 +8,7 @@ import { AitAuthService } from "./ait.auth.service";
 import { WatchlistService } from "./watchlist.service";
 import { ReportService } from "./report.service";
 import { LAParcelService } from "./laparcel.service";
+import { CaseService } from "./case.service";
 
 @NgModule({
     imports: [
@@ -22,6 +23,7 @@ import { LAParcelService } from "./laparcel.service";
         WatchlistService,
         ReportService,
         LAParcelService,
+        CaseService,
     ],
 
 })

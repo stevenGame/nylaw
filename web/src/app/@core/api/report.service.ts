@@ -7,9 +7,7 @@ import { SearchResult } from '@common/models/generic/search-result'
 import { IChatAnswer, IChatSearch, IWenshuCourt } from '@common/models/openai/chat'
 import { firstValueFrom } from "rxjs";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ReportService {
   baseUrl = '/api/reports';
   constructor(private http: HttpClient) {
@@ -62,7 +60,7 @@ export class ReportService {
   async listCases() {
     return await firstValueFrom(this.http.get<ICase[]>('/api/legal'))
   }
-  
+
   async generateCasePDF(mCase: ICase) {
     return await firstValueFrom(this.http.post('/api/legal/' + mCase?.folderId, mCase))
   }
